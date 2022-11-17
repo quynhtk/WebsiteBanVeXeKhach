@@ -1,0 +1,69 @@
+﻿@page
+@model WebsiteBVXK.Pages.TimVeModel
+@{ 
+    Layout = "_Layout";
+    ViewData["Tittle"] = "Tìm Vé Xe Khách";
+}
+
+<link rel="stylesheet" href="~/css/TimVe.css"/>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<form method="post" class="banner" id = "tim-ve">
+    <div class="contenttv">
+        <div class="form">
+            <h2><b>Tìm Kiếm Vé Xe</b></h2>
+            <div>
+                <div class="input-form">
+                    <span>Chọn Điểm Đi</span>
+                    <select asp-for="timVe.start">
+                        @{
+                            for(int tinh = 0; tinh < Model.diemDi.Count; tinh++)
+                            {
+                                <option>@Model.diemDi[tinh]</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="input-form">
+                    <span>Chọn Điểm Đến</span>
+                    <select asp-for="timVe.des" >
+                        @{
+                            for(int tinh = 0; tinh < Model.diemDen.Count; tinh++)
+                            {
+                                <option>@Model.diemDen[tinh]</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="input-form">
+                    <span>Thời Gian Đi</span>
+                    <input id="ngay-di" type="date" asp-for="timVe.date" />
+                </div>
+            </div>
+            <div>
+                <button class="buttontv">Tìm chuyến xe</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    document.getElementById("ngay-di").min = today;
+</script>

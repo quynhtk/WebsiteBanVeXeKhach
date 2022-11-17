@@ -1,0 +1,27 @@
+﻿@page
+@model WebsiteBVXK.Pages.IndexModel
+@{
+    Layout = "_Layout";
+    ViewData["Tittle"] = "Trang Chủ";
+}
+
+<link rel="stylesheet" href="~/css/TrangChu.css"/>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div id="send-mail" class="contentnx">
+    <h1>Nhà Xe Khánh Truyền</h1>
+    <P><marquee direction="left">Hân hạnh mang đến những dịch vụ tốt nhất cho quý khách hàng.</marquee></P>
+    <div>
+        <button class="buttontk">
+            <a asp-page="/KhachHang/TimVe">
+                <span>TÌM KIẾM VÉ XE</span>
+            </a>
+        </button>
+       
+    </div>
+</div>
+
+
+

@@ -1,0 +1,238 @@
+﻿
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #55acee 50%, whitesmoke 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+#content main .vexe-container {
+    margin: 20px 0;
+}
+
+    #content main .vexe-container select {
+        background-color: white;
+        border: 0;
+        border-radius: 5px;
+        font-size: 15px;
+        margin-left: 10px;
+        padding: 5px 15px 5px 15px;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+#content main .container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+#content main .seat1 {
+    background-color: rgb(128, 128, 128);
+    height: 26px;
+    width: 32px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+#content main .seat {
+    background-color: rgb(128, 128, 128);
+    height: 40px;
+    width: 32px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+    #content main .seat.selected {
+        background-color: blue;
+        height: 26px;
+        width: 32px;
+        margin: 3px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: #fff;
+        text-align: center;
+    }
+
+    #content main .seat.sold {
+        background-color: #fff;
+        height: 26px;
+        width: 32px;
+        margin: 3px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: #fff;
+        text-align: center;
+    }
+
+    #content main .seat:nth-of-type(2) {
+        margin-right: 18px;
+    }
+
+    #content main .seat:nth-last-of-type(2) {
+        margin-left: 18px;
+    }
+
+    #content main .seat:not(.sold):hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+#content main .showcase .seat:not(.sold):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+#content main .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+    #content main .showcase li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+    }
+
+        #content main .showcase li small {
+            margin-left: 2px;
+            font-weight: bold;
+        }
+
+#content main .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+#content main p.text {
+    margin: 0;
+    padding: 0;
+}
+
+#content main span {
+    color: blue;
+    font-size: 20px;
+}
+
+#content main .btn12 {
+    padding: 5px;
+    border-radius: 5px;
+    color: transparent;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+    #content main .btn12 .btn1 {
+        width: 200px;
+        height: 50px;
+        padding: 1px 0;
+        margin: 2px 1px;
+        text-align: center;
+        border-radius: 30px;
+        font-weight: bold;
+        border: 2px solid black;
+        background: transparent;
+        color: darkblue;
+        font-size: 20px;
+    }
+
+        #content main .btn12 .btn1 span {
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: static;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        #content main .btn12 .btn1:hover span {
+            width: 100%;
+        }
+
+        #content main .btn12 .btn1:hover {
+            border: 2px solid darkblue;
+        }
+
+        #content main .btn12 .btn1 a {
+            color: darkblue;
+            text-decoration: none;
+        }
+
+    #content main .btn12 .btn2 {
+        width: 200px;
+        height: 50px;
+        padding: 1px 0;
+        margin: 2px 1px;
+        text-align: center;
+        border-radius: 30px;
+        font-weight: bold;
+        border: 2px solid black;
+        background: transparent;
+        color: darkblue;
+        font-size: 20px;
+    }
+
+        #content main .btn12 .btn2 span {
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: static;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        #content main .btn12 .btn2:hover span {
+            width: 100%;
+        }
+
+        #content main .btn12 .btn2:hover {
+            border: 2px solid darkblue;
+        }
+
+        #content main .btn12 .btn2 a {
+            color: darkblue;
+            text-decoration: none;
+        }

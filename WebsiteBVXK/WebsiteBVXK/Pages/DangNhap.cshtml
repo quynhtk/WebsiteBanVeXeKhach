@@ -1,0 +1,38 @@
+﻿@page
+@model WebsiteBVXK.Pages.DangNhapModel
+@{ 
+    Layout = "_Layout";
+    ViewData["Tittle"] = "Đăng Nhập";
+}
+
+<link rel="stylesheet" href="~/css/DangNhap.css"/>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div> 
+<div id="account" class="noi-dung">
+    <div class="form">
+        <h2>Đăng Nhập</h2>
+        <form method="post">
+            <div class="input-form">
+                <span>Tên Người Dùng</span>
+                <input type="text" asp-for="Input.Username"/>
+            </div>
+            <div class="input-form">
+                <span>Mật Khẩu</span>
+                <input type="password" asp-for="Input.Password"/>
+            </div>
+            @{
+                if (Model.isError)
+                {
+                    <div>Tên đăng nhập hoặc mật khẩu không đúng</div>
+                };
+            }
+            <div>
+                <button class="buttondn" type="submit">
+                    <span>Đăng nhập</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

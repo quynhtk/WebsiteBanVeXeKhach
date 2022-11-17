@@ -1,0 +1,145 @@
+﻿@page
+@model WebsiteBVXK.Pages.KhachHang.GiuongModel
+@{
+	Layout = "_Layout";
+	ViewData["Tittle"] = "Chọn Ghế";
+}
+
+<link rel="stylesheet" href="~/css/ghe.css"/>
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="list-seats" >
+	@*<div class="vexe-container">
+		<label><b>CHỌN GHẾ:</b></label>
+		<select id="chon-tang" asp-for="tang">
+			<option>Tầng Dưới</option>
+			<option>Tầng Trên</option>
+		</select>
+	</div>*@
+
+	<ul class="showcase">
+		<li>
+			<div class="seat1"></div>
+			<small style="color: rgb(128, 128, 128);">Trống</small>
+		</li>
+		<li>
+			<div class="seat selected"></div>
+			<small style="color: blue;">Đang Chọn</small>
+		</li>
+		<li>
+			<div class="seat sold"></div>
+			<small style="color: white;">Đã Đặt</small>
+		</li>
+	</ul>
+	<div class="row">
+	<div  class="container">
+		<div class ="row" style="justify-content: space-around">
+			<div>Tầng Dưới</div>
+		</div>
+		<div class ="row" style="justify-content: space-around">
+			<div>A</div>
+			<div>B</div>
+			<div>C</div>
+		</div>
+		@{
+			if(Model.ghes != null)
+			{
+				for (int i = 0; i <= Model.ghes.Count / 2; i = i + 3)
+				{
+					<div class="row">
+						@for(int y = 0; y < 3; y++)
+						{
+							@if (i + y >= Model.ghes.Count / 2) continue;
+							var state = Model.ghes[i + y].isPick;
+
+							@if(state == 1){
+								<form method="post" asp-route-id="@(i + y)" asp-page-handler="clickGhe">
+									<button value=@(i + y) class="seat selected">@(i / 3 * 2 + 1)</button>
+								</form>
+							}
+							else if(state == 0) {
+								<form method="post" asp-route-id="@(i + y)" asp-page-handler="clickGhe">
+									<button value=@(i + y) class="seat">@(i / 3 * 2 + 1)</button>
+								</form>
+							} else
+							{
+								<div>
+									<button value=@(i + y) class="seat sold">@(i / 3 * 2 + 1)</button>
+								</div>
+							}
+						}
+					</div>
+				}
+			}
+		}
+	</div>
+	<div  class="container">
+		<div class ="row" style="justify-content: space-around">
+			<div>Tầng Trên</div>
+		</div>
+		<div class ="row" style="justify-content: space-around">
+			<div>A</div>
+			<div>B</div>
+			<div>C</div>
+		</div>
+		@{
+			if(Model.ghes != null)
+			{
+				var start = Model.ghes.Count / 2;
+				for (int i = 0; i <= Model.ghes.Count / 2; i = i + 3)
+				{
+					<div class="row">
+						@for(int y = 0; y < 3; y++)
+						{
+							@if (start + i + y >= Model.ghes.Count) continue;
+							var state = Model.ghes[start + i + y].isPick;
+
+							@if(state == 1){
+								<form method="post" asp-route-id="@(start + i + y)" asp-page-handler="clickGhe">
+									<button value=@(start + i + y) class="seat selected">@(i / 3 * 2 + 2)</button>
+								</form>
+							}
+							else if(state == 0){
+								<form method="post" asp-route-id="@(start + i + y)" asp-page-handler="clickGhe">
+									<button value=@(start + i + y) class="seat">@(i / 3 * 2 + 2)</button>
+								</form>
+							} else
+							{
+								<div>
+									<button value=@(start + i + y) class="seat sold">@(i / 3 * 2 + 2)</button>
+								</div>
+							}
+						}
+					</div>
+				}
+			}
+		}
+	</div>
+	</div>
+	
+
+	<p class="text">
+		<ul>
+			<li>Bạn đã chọn <b><span id="count">@Model.gheDangChon.Count</span></b> vé</li>
+			<li>Số ghế của bạn <b><span id="count">@(this.Model.GetViTri())</span></b></li>
+			<li>Tổng tiền của bạn <b><span id="total">@(((decimal)Model.selected.GiaVe * Model.gheDangChon.Count).ToString("N2"))<sup>đ</sup></span></b></li>
+		</ul>
+	</p>
+	<br>
+	<div class="btn12">
+		<div>
+			<button class="btn1">
+				<a asp-page="/KhachHang/ThongTinVe">
+					Quay Lại
+				</a>
+			</button>
+		</div>
+		<form method= "post" asp-route-id="next">
+			<button class="btn2" type="submit">
+				Tiếp tục
+			</button>
+		</form>
+	</div>
+</div>
