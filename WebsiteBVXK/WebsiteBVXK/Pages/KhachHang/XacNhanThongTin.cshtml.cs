@@ -65,7 +65,7 @@ namespace WebsiteBVXK.Pages.KhachHang
 
             var lichtrinh = _lichTrinhManager.GetLichTrinhById(ticket.IdLichTrinh, x => x);
 
-            var xe = _xeManager.GetXeById(lichtrinh.IdLichTrinh, x => x);
+            var xe = _xeManager.GetXeById(lichtrinh.IdXe, x => x);
             loaiXe = xe.LoaiXe == (int)LoaiXe.Ngoi ? "Xe thường" : "Xe vip";
 
             var soluong = xe.LoaiXe == (int)LoaiXe.Ngoi ? 40 : 32;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace BVXK.Domain.Models
             id = cmnd;
         }
         public string? name { get; set; }
+        [RegularExpression("[0-9]{10}")]
         public string? phone { get; set; }
         public string? email { get; set; }
         public string? id { get; set; }

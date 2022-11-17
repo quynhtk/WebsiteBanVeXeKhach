@@ -14,12 +14,12 @@ namespace WebsiteBVXK
             {
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("nhaxe1545@gmail.com", "Nhaxe123456"),
+                Credentials = new NetworkCredential("khanhquynh761@gmail.com", "Quynh070601"),
                 EnableSsl = true
             };
             MailMessage mailMessage = new MailMessage();
 
-            mailMessage.From = new MailAddress("nhaxe1545@gmail.com");
+            mailMessage.From = new MailAddress("khanhquynh761@gmail.com");
 
             mailMessage.To.Add(to);
 

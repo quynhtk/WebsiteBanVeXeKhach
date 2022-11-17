@@ -31,10 +31,10 @@ function sendEmail(_body, to, sub) {
 	Email.send({
 		Host: "smtp.gmail.com",
 		Port: 587,
-		Username: "nhaxe1545@gmail.com",
-		Password: "Nhaxe123456",
+		Username: "khanhquynh761@gmail.com",
+		Password: "Quynh070601",
 		To: to,
-		From: "nhaxe1545@gmail.com",
+		From: "khanhquynh761@gmail.com",
 		Subject: sub,
 		Body: _body
 	}).then(
