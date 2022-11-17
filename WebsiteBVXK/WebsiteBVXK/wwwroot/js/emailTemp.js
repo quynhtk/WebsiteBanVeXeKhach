@@ -37,9 +37,10 @@ function sendEmail(_body, to, sub) {
 		From: "khanhquynh761@gmail.com",
 		Subject: sub,
 		Body: _body
-	}).then(
-		message => alert("Đã gửi email đến khách hàng")
-	);
+	})
+	.then(function (message) {
+		alert("Đã gửi email đến khách hàng")
+	});
 }
 
 

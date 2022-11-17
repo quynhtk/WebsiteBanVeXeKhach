@@ -27,7 +27,7 @@ namespace WebsiteBVXK
 
             mailMessage.Body = body;
 
-            //client.Send(mailMessage);
+            client.Send(mailMessage);
         }
     }
 }
